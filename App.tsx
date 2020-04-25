@@ -1,11 +1,13 @@
 import React from 'react';
-import ToastExample from './ToastExample';
+import {NativeModules} from 'react-native';
 import {Alert, Button, View} from 'react-native';
+
+const {ToastExample} = NativeModules;
 
 const App = () => {
   const show = async () => {
-    await ToastExample.show('トーストを表示しました！', ToastExample.SHORT);
-    Alert.alert('ちゃんと呼ばれています！');
+    await ToastExample.show('Hello!', ToastExample.SHORT);
+    Alert.alert('Hello^^');
   };
 
   return (
